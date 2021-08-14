@@ -1,0 +1,70 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Invaders</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="data">
+        
+        
+        <form action=" " method="post" id="myForm"><h3>Enter the details below</h3>
+                
+        <input type="text" id="fName" placeholder="First Name">
+              
+         <input type="text" id="lName" placeholder="Last Name"><br><br>
+        
+        <input type=text id="Address" name="address" placeholder="Address"><br>
+        <br><input type="number" id="pincode" placeholder="pincode"><br><br>
+        gender   :<input type="radio" value="male" id="gender" name="gender">Male
+                  <input type="radio" value="female" id="gender" name="gender">Female<br><br>
+        Choice of food:<input type="checkbox" id="food" name="sandwich">Sandwich<br>
+                        <input type="checkbox" id="food" name="pizza">pizza<br>
+                        <input type="checkbox" id="food" name="biriyani">Biriyani<br>
+                        <input type="checkbox" id="food">burger<br>
+                        <input type="checkbox" id="food" name="lazzi">lazzi<br><br>
+         
+             <input type="text" id="state" placeholder="state"><br>
+          <br><input type="text" id="country" placeholder="country"><br><br>
+             
+        <button onclick="addData()">Add</button>
+        </form>
+        </div>
+        <div id="tab">
+        <table id="list" cellspacing="3" cellpadding="3" border="1"><thead>
+        <tr>
+          <td>firstname</td><td>lastname</td><td>Address</td><td>pincode</td><td>gender</td><td>food</td><td>state</td><td>country</td>
+        </tr></thead>
+        <tbody id="content"></tbody></table>
+        </div>
+        </div>    
+        <script>
+            function addData() {
+      
+      var fname = document.getElementById("fName").value;
+      var lname = document.getElementById("lName").value;
+      var address=document.getElementById("Address").value;
+      var pin=document.getElementById("pincode").value;
+      var gender=document.getElementById("gender").value;
+       // var checkedValue=null;
+  food=document.querySelector("#food:checked").checked;
+  
+      var state=document.getElementById("state").value;
+      var country=document.getElementById("country").value;
+    var table = document.getElementById("list");
+   var rows = "";
+
+        rows += "<tr><td>" + fname + "</td><td>"+lname+"</td><td>"+address+"</td><td>"+pin+"</td><td>"+gender+"</td><td>"+food+"</td><td>"+state+"</td><td>"+country+"</td></tr>";
+        var tbody = document.querySelector("#list tbody");
+        var tr = document.createElement("tr");
+   tr.innerHTML = rows;
+        tbody.appendChild(tr);
+}
+
+        </script>
+        </body>
+        </html>
